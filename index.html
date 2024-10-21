@@ -25,13 +25,14 @@
                 <script>
                     document.title = "JavaScript Basic -- In class practice -- Yilian Zhang";
                     // use document.write to display a message
-                    
+                    document.write("<p>Hello, world!</p>");
                     // use console.log to display a message   
-                  
+                    console.log("This is used for debugging.");
                     
                 </script>
             </p>
             <p> Please import external file hello.js here. 
+                <script src="js/hello.js"></script>
                 
             </p>
         </div>
@@ -39,15 +40,34 @@
         <div class="practice">
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
+            <script>
+                var a = "10";
+                var b = 3;
 
+                var c = a + b;
+                var d = a - b;
+                var e = a * b;
+                var f = a / b;
+                var g = a % b;
+
+                document.write("<p>a + b =" + c +"</p>");
+                document.write("<p>a - b =" + d +"</p>");
+                document.write("<p>a * b =" + e +"</p>");
+                document.write("<p>a / b =" + f +"</p>");
+                document.write("<p>a % b =" + g +"</p>");
+            </script>
 
         </div>
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
             <p> Write an image to the page </p>
-
+                <script>
+                    document.write("<img src=\"img/die1.png\">");
+                </script>
             <p> Write a table to the page </p>
+            <script>
+                document.write("<table><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td></tr></table>"); </script>
 
         </div>
 
