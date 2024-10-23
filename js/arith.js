@@ -1,12 +1,23 @@
 // get the element 
+let spanE1 = document.getElementById('num1');
+console.log("spanE1 - " + typeof(spanE));
+
+let spanE2 = document.getElementById('num2');
+console.log("spanE2 - " + typeof(paragraph1));
 
 // element --- property
-var num1 = parseInt(document.getElementById('n1').textContent); 
+let n1 = parseInt(spanE1.textContent);
+let n2 = parseInt(spanE2.textContent);
+
+console.log("n1 - " + typeof(n1));
+console.log("n2 - " + typeof(n2));
+
+// var num1 = parseInt(document.getElementById('n1').textContent); 
 
 
 
 //process
-var c = num1 + num2;
+var c = n1 + n2;
 
 //display
 document.write(c);
