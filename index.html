@@ -1,14 +1,14 @@
 <html>
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
 
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!-- Jquery library   ---->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!-- Jquery library   ---->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 
-</head>
+    </head>
 
     <body>
         <div class="wrapper">
@@ -109,10 +109,22 @@
                 <p id="p1"> Paragraph Number One </p>
                 <p id="p2"> Paragraph Number two </p>
                 <p id="p3"> Paragraph Number three </p>
-                <p>Please write JavaScript code to change the content of each paragraph.​
-                <p>
+                <p>Please write JavaScript code to change the content of each paragraph.​</p>
 
+                <!-- 10/28/2024 Classwork -->
+                <script>
+                    // Changing the first paragraph
+                    const pOne = document.getElementById("p1");
+                    pOne.innerHTML = "<b>I changed for the first time.</b>";
 
+                    // Changing the second paragraph
+                    const pTwo = document.getElementById("p2");
+                    pTwo.innerHTML= "<b>I changed for the second time.</b>";
+
+                    // Changing the third paragraph
+                    const pThree = document.getElementById("p3");
+                    pThree.innerHTML= "<b>I changed for the third time.</b>";
+                </script>
             </div>
 
             <div class="practice">
@@ -120,8 +132,11 @@
                 <p> Please enter your numbers </p>
                 <script>
                     function calculate() {
-
-
+                        // Getting the values from the work and summing them.
+                        const input1 = document.getElementsByName('num1')[0];
+                        const input2 = document.getElementsByName('num2')[0];
+                        result = document.getElementById("result");
+                        result.innerHTML = (float) (input1.value) + (float) (input2.value);
                     }
                 </script>
                 <p> <input type="text" name="num1" /> + <input type="text" name="num2">
@@ -151,6 +166,17 @@
                     </p>
                 </form>
 
+                <script>
+                    // Event handler
+                    function welcome(){
+                        alert("Thank you!");
+                    }
+
+
+                    // Binding (registering the event)
+                    const nameE = document.getElementById("cName");
+                    nameE.addEventListener('blur', welcome);
+                </script>
             </div>
 
             <div class="practice">

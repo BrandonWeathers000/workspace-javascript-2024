@@ -15,7 +15,6 @@ console.log("n2 - " + typeof(n2));
 // var num1 = parseInt(document.getElementById('n1').textContent); 
 
 
-
 //process
 var c = n1 + n2;
 
