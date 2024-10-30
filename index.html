@@ -155,7 +155,7 @@
                         </label>
                     </p>
 
-                    <p id="message">
+                    <p id="checkmessage">
 
                     </p>
 
@@ -169,7 +169,10 @@
                 <script>
                     // Event handler
                     function welcome(){
-                        alert("Thank you!");
+                        // alert("Thank you!");
+                        const namebox = document.getElementById('cName');
+                        var newmessage = "Welcome, " + namebox.value + " you are a new customer.";
+                        document.getElementById('checkmessage').textContent = newmessage;
                     }
 
 
@@ -182,8 +185,27 @@
             <div class="practice">
                 <h1> Practice - Calculate Square</h1>
                 Calculating Square:
-                <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-                <label id="result"> ? </label>
+                <input type="text" id="squareNum" placeholder="Type in a number"> <sup> 2 </sup> =
+                <label id="squareResult"> ? </label>
+                <script>
+                    function calculateSquare(){
+                        // Get the number
+                        const squareE = document.getElementById('squareNum');
+                        const number = parseInt(squareE.value);
+                        console.log("The number is got is: " + number);
+
+                        // Calculate the square of the number
+                        newNumber = number * number;
+
+                        // Put it back to the page
+                        document.getElementById("squareResult").textContent = " " + newNumber;
+                    }
+
+                    const squareE = document.getElementById("squareNum");
+                    // squareE.addEventListener('blur', calculateSquare);
+                    squareE.addEventListener('change', calculateSquare);
+                </script>
+
 
             </div>
 
@@ -197,8 +219,19 @@
 
                 <input type="button" id="tryit" value="Click and Display"> 
 
-                <div id="message"> 
+                <div id="htmlCode"> 
                 </div>
+
+                <script>
+                    function convertHTML(){
+                        const codeE = document.getElementById('code');
+                        const htmlCodeE = document.getElementById('htmlCode');
+
+                        htmlCodeE.innerHTML = codeE.value;
+
+                    }
+                    document.getElementById('tryit').addEventListener('click', convertHTML);
+                </script>
 
 
             </div>
@@ -236,8 +269,6 @@
                 </p>
 
             </div>
-
-
 
             <div class="practice">
                 <h1> Switch practice -- Insurance Application</h1>
@@ -432,4 +463,3 @@
 
 
     </body>
-</html>
