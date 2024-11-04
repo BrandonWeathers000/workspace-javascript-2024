@@ -254,10 +254,33 @@
 
                 </p>
 
+                <!-- 11/4/2024 Classwork-->
                 <script type="text/javascript">
 
+                    // Event handler
+                    function getPrice(){
+                        var year = document.getElementById('year');
+                        var condition = document.getElementById('condition');
 
+                        console.log(year.value);
+                        console.log(year.selectedIndex);
 
+                        if(year.value == "2003" && condition.value == "Fair"){
+                            price = 2000;
+                        }else if(year.value == "2003" && condition.value == "Good"){
+                            price = 3000;
+                        }else if(year.value == "2004" && condition.value == "Fair"){
+                            price = 2200;
+                        }else if(year.value == "2004" && condition.value == "Good"){
+                            price = 4000;
+                        }
+
+                        document.getElementById("price").innerHTML = "The price is <b>" + price + "</b>.";
+                    }
+
+                    /// Adding the event lisener
+                    year.addEventListener('change', getPrice, false); 
+                    condition.addEventListener('change', getPrice, false); 
                 </script>
 
             </div>
@@ -268,6 +291,28 @@
                     <input type="text" id="theme">
                 </p>
 
+                <script>
+                    var theme = document.getElementById('theme');
+                    theme.addEventListener('blur', changeTheme, false);
+
+                    function changeTheme(){
+                        var themeValue = document.getElementById('theme').value;
+
+                        switch(themeValue){
+                            case "warm":
+                                document.body.style.backgroundColor= "yellow";
+                                break;
+                            case "cool":
+                                document.body.style.backgroundColor = "blue";
+                                break;
+                            case "hot":
+                                document.body.style.backgroundColor = "red";
+                                break;
+                            default:
+                                alert("Please enter a valid theme.");
+                        }
+                    }
+                </script>
             </div>
 
             <div class="practice">
