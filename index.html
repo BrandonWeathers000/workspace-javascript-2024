@@ -435,7 +435,7 @@
             <div class="practice">
                 <h1>Change Attribute -- Rolling a dice </h1>
                 <p> <input type="button" id="roll" value="roll" /> </p>
-                <p> <img src="img/die1.png"> </p>
+                <p> <img id="dieimage" src="img/die1.png"> </p>
                 <table>
                     <tr>
                         <th>Result</th>
@@ -457,6 +457,29 @@
                     </tr>
                 </table>
 
+                <script>
+                    // const myarray = [1, 2, 3, 4, 5, 6, 7];
+                    // myarray.forEach(element => console.log(element));
+                    // console.log("Printing out the array.");
+                    // for(var i in myarray){
+                    //     console.log(i);
+                    // }
+                    // myarray[1000] = 50;
+                    // console.log(myarray[1000]);
+                    
+                    var stats = [0, 0, 0, 0, 0, 0];
+                    function rolldice(){
+                        var imgE = document.querySelector('#dieimage');
+
+                        // Insert random number here
+                        var randInt = Math.floor(Math.random()*(6-1+1)+1);
+                        imgE.setAttribute('src', 'img/die' + randInt + '.png');
+                        stats[randInt-1]++;
+                        document.getElementById('r'+randInt).textContent = stats[randInt-1].toString();
+                    }
+
+                    document.getElementById('roll').addEventListener('click', rolldice);
+                </script>
             </div>
 
 
@@ -478,10 +501,26 @@
                     <img src="img/usca5.jpg" alt="usca">
                 </div>
                 <script>
-                    
+                    var imglist = document.querySelectorAll('.img-container-hide');
+                    imglist[0].setAttribute('class', 'img-container');
+                    var index = 0;
+
+                    // event -- change to the next picture
+                    function changepic(){
+                        imglist[index].setAttribute('class', 'img-container-hide');
+                        index++;
+                        index %= 5;
+                        imglist[index].setAttribute('class', 'img-container');
+                    }
+
+                    // bind the event
+                    setInterval(changepic, 4000);
+                    imglist[0].addEventListener('click', changepic);
+                    imglist[1].addEventListener('click', changepic);
+                    imglist[2].addEventListener('click', changepic);
+                    imglist[3].addEventListener('click', changepic);
+                    imglist[4].addEventListener('click', changepic);
                 </script>
-
-
             </div>
 
 
